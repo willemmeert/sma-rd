@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="smardModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="adrmap_energymeter">
+          <Key>
+            <PropertyRef Name="address" />
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="address" Type="int" Nullable="false" />
+          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="50" />
+          <Property Name="log_column" Type="varchar" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="log_energymeter">
+          <Key>
+            <PropertyRef Name="device" />
+            <PropertyRef Name="logtime" />
+          </Key>
+          <Property Name="device" Type="int" Nullable="false" />
+          <Property Name="logtime" Type="int" Nullable="false" />
+          <Property Name="p_in_l1_act" Type="int" />
+          <Property Name="p_in_l2_act" Type="int" />
+          <Property Name="p_in_l3_act" Type="int" />
+          <Property Name="p_in_all_act" Type="int" />
+          <Property Name="q_in_l1_act1" Type="int" />
+          <Property Name="q_in_l2_act1" Type="int" />
+          <Property Name="q_in_l3_act1" Type="int" />
+          <Property Name="q_in_all_act1" Type="int" />
+          <Property Name="s_in_l1_act1" Type="int" />
+          <Property Name="s_in_l2_act1" Type="int" />
+          <Property Name="s_in_l3_act1" Type="int" />
+          <Property Name="s_in_all_act1" Type="int" />
+          <Property Name="p_out_l1_act1" Type="int" />
+          <Property Name="p_out_l2_act1" Type="int" />
+          <Property Name="p_out_l3_act1" Type="int" />
+          <Property Name="p_out_all_act1" Type="int" />
+          <Property Name="q_out_l1_act1" Type="int" />
+          <Property Name="q_out_l2_act1" Type="int" />
+          <Property Name="q_out_l3_act1" Type="int" />
+          <Property Name="q_out_all_act1" Type="int" />
+          <Property Name="s_out_l1_act1" Type="int" />
+          <Property Name="s_out_l2_act1" Type="int" />
+          <Property Name="s_out_l3_act1" Type="int" />
+          <Property Name="s_out_all_act1" Type="int" />
+          <Property Name="cosphi_l1" Type="int" />
+          <Property Name="cosphi_l2" Type="int" />
+          <Property Name="cosphi_l3" Type="int" />
+          <Property Name="thd_l1" Type="int" />
+          <Property Name="thd_l2" Type="int" />
+          <Property Name="thd_l3" Type="int" />
+          <Property Name="v_l1" Type="int" />
+          <Property Name="v_l2" Type="int" />
+          <Property Name="v_l3" Type="int" />
+          <Property Name="p_in_l1_sum" Type="bigint" />
+          <Property Name="p_in_l2_sum" Type="bigint" />
+          <Property Name="p_in_l3_sum" Type="bigint" />
+          <Property Name="p_in_all_sum" Type="bigint" />
+          <Property Name="q_in_l1_sum" Type="bigint" />
+          <Property Name="q_in_l2_sum" Type="bigint" />
+          <Property Name="q_in_l3_sum" Type="bigint" />
+          <Property Name="q_in_all_sum" Type="bigint" />
+          <Property Name="s_in_l1_sum" Type="bigint" />
+          <Property Name="s_in_l2_sum" Type="bigint" />
+          <Property Name="s_in_l3_sum" Type="bigint" />
+          <Property Name="s_in_all_sum" Type="bigint" />
+          <Property Name="p_out_l1_sum" Type="bigint" />
+          <Property Name="p_out_l2_sum" Type="bigint" />
+          <Property Name="p_out_l3_sum" Type="bigint" />
+          <Property Name="p_out_all_sum" Type="bigint" />
+          <Property Name="q_out_l1_sum" Type="bigint" />
+          <Property Name="q_out_l2_sum" Type="bigint" />
+          <Property Name="q_out_l3_sum" Type="bigint" />
+          <Property Name="q_out_all_sum" Type="bigint" />
+        </EntityType>
+        <EntityType Name="smadevice">
+          <Key>
+            <PropertyRef Name="deviceID" />
+          </Key>
+          <Property Name="deviceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="devicetype" Type="int" Nullable="false" />
+          <Property Name="serialnumber" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="hostname" Type="nvarchar" MaxLength="50" />
+          <Property Name="ipaddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="targetaddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="firmware" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="smadevicetype">
+          <Key>
+            <PropertyRef Name="devicetypeID" />
+          </Key>
+          <Property Name="devicetypeID" Type="int" Nullable="false" />
+          <Property Name="devicetypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="devicetypeClass" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_log_energymeter_smadevice">
+          <End Role="smadevice" Type="Self.smadevice" Multiplicity="1" />
+          <End Role="log_energymeter" Type="Self.log_energymeter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="smadevice">
+              <PropertyRef Name="deviceID" />
+            </Principal>
+            <Dependent Role="log_energymeter">
+              <PropertyRef Name="device" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_smadevice_smadevicetype">
+          <End Role="smadevicetype" Type="Self.smadevicetype" Multiplicity="1" />
+          <End Role="smadevice" Type="Self.smadevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="smadevicetype">
+              <PropertyRef Name="devicetypeID" />
+            </Principal>
+            <Dependent Role="smadevice">
+              <PropertyRef Name="devicetype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="smardModelStoreContainer">
+          <EntitySet Name="adrmap_energymeter" EntityType="Self.adrmap_energymeter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="log_energymeter" EntityType="Self.log_energymeter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="smadevice" EntityType="Self.smadevice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="smadevicetype" EntityType="Self.smadevicetype" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_log_energymeter_smadevice" Association="Self.FK_log_energymeter_smadevice">
+            <End Role="smadevice" EntitySet="smadevice" />
+            <End Role="log_energymeter" EntitySet="log_energymeter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_smadevice_smadevicetype" Association="Self.FK_smadevice_smadevicetype">
+            <End Role="smadevicetype" EntitySet="smadevicetype" />
+            <End Role="smadevice" EntitySet="smadevice" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="smardModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="adrmap_energymeter">
+          <Key>
+            <PropertyRef Name="address" />
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="address" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="log_column" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="log_energymeter">
+          <Key>
+            <PropertyRef Name="device" />
+            <PropertyRef Name="logtime" />
+          </Key>
+          <Property Name="device" Type="Int32" Nullable="false" />
+          <Property Name="logtime" Type="Int32" Nullable="false" />
+          <Property Name="p_in_l1_act" Type="Int32" />
+          <Property Name="p_in_l2_act" Type="Int32" />
+          <Property Name="p_in_l3_act" Type="Int32" />
+          <Property Name="p_in_all_act" Type="Int32" />
+          <Property Name="q_in_l1_act1" Type="Int32" />
+          <Property Name="q_in_l2_act1" Type="Int32" />
+          <Property Name="q_in_l3_act1" Type="Int32" />
+          <Property Name="q_in_all_act1" Type="Int32" />
+          <Property Name="s_in_l1_act1" Type="Int32" />
+          <Property Name="s_in_l2_act1" Type="Int32" />
+          <Property Name="s_in_l3_act1" Type="Int32" />
+          <Property Name="s_in_all_act1" Type="Int32" />
+          <Property Name="p_out_l1_act1" Type="Int32" />
+          <Property Name="p_out_l2_act1" Type="Int32" />
+          <Property Name="p_out_l3_act1" Type="Int32" />
+          <Property Name="p_out_all_act1" Type="Int32" />
+          <Property Name="q_out_l1_act1" Type="Int32" />
+          <Property Name="q_out_l2_act1" Type="Int32" />
+          <Property Name="q_out_l3_act1" Type="Int32" />
+          <Property Name="q_out_all_act1" Type="Int32" />
+          <Property Name="s_out_l1_act1" Type="Int32" />
+          <Property Name="s_out_l2_act1" Type="Int32" />
+          <Property Name="s_out_l3_act1" Type="Int32" />
+          <Property Name="s_out_all_act1" Type="Int32" />
+          <Property Name="cosphi_l1" Type="Int32" />
+          <Property Name="cosphi_l2" Type="Int32" />
+          <Property Name="cosphi_l3" Type="Int32" />
+          <Property Name="thd_l1" Type="Int32" />
+          <Property Name="thd_l2" Type="Int32" />
+          <Property Name="thd_l3" Type="Int32" />
+          <Property Name="v_l1" Type="Int32" />
+          <Property Name="v_l2" Type="Int32" />
+          <Property Name="v_l3" Type="Int32" />
+          <Property Name="p_in_l1_sum" Type="Int64" />
+          <Property Name="p_in_l2_sum" Type="Int64" />
+          <Property Name="p_in_l3_sum" Type="Int64" />
+          <Property Name="p_in_all_sum" Type="Int64" />
+          <Property Name="q_in_l1_sum" Type="Int64" />
+          <Property Name="q_in_l2_sum" Type="Int64" />
+          <Property Name="q_in_l3_sum" Type="Int64" />
+          <Property Name="q_in_all_sum" Type="Int64" />
+          <Property Name="s_in_l1_sum" Type="Int64" />
+          <Property Name="s_in_l2_sum" Type="Int64" />
+          <Property Name="s_in_l3_sum" Type="Int64" />
+          <Property Name="s_in_all_sum" Type="Int64" />
+          <Property Name="p_out_l1_sum" Type="Int64" />
+          <Property Name="p_out_l2_sum" Type="Int64" />
+          <Property Name="p_out_l3_sum" Type="Int64" />
+          <Property Name="p_out_all_sum" Type="Int64" />
+          <Property Name="q_out_l1_sum" Type="Int64" />
+          <Property Name="q_out_l2_sum" Type="Int64" />
+          <Property Name="q_out_l3_sum" Type="Int64" />
+          <Property Name="q_out_all_sum" Type="Int64" />
+          <NavigationProperty Name="smadevice" Relationship="Self.FK_log_energymeter_smadevice" FromRole="log_energymeter" ToRole="smadevice" />
+        </EntityType>
+        <EntityType Name="smadevice">
+          <Key>
+            <PropertyRef Name="deviceID" />
+          </Key>
+          <Property Name="deviceID" Type="Int32" Nullable="false" />
+          <Property Name="devicetype" Type="Int32" Nullable="false" />
+          <Property Name="serialnumber" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="hostname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ipaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="targetaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="firmware" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="log_energymeter" Relationship="Self.FK_log_energymeter_smadevice" FromRole="smadevice" ToRole="log_energymeter" />
+          <NavigationProperty Name="smadevicetype" Relationship="Self.FK_smadevice_smadevicetype" FromRole="smadevice" ToRole="smadevicetype" />
+        </EntityType>
+        <EntityType Name="smadevicetype">
+          <Key>
+            <PropertyRef Name="devicetypeID" />
+          </Key>
+          <Property Name="devicetypeID" Type="Int32" Nullable="false" />
+          <Property Name="devicetypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="devicetypeClass" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="smadevices" Relationship="Self.FK_smadevice_smadevicetype" FromRole="smadevicetype" ToRole="smadevice" />
+        </EntityType>
+        <Association Name="FK_log_energymeter_smadevice">
+          <End Role="smadevice" Type="Self.smadevice" Multiplicity="1" />
+          <End Role="log_energymeter" Type="Self.log_energymeter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="smadevice">
+              <PropertyRef Name="deviceID" />
+            </Principal>
+            <Dependent Role="log_energymeter">
+              <PropertyRef Name="device" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_smadevice_smadevicetype">
+          <End Role="smadevicetype" Type="Self.smadevicetype" Multiplicity="1" />
+          <End Role="smadevice" Type="Self.smadevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="smadevicetype">
+              <PropertyRef Name="devicetypeID" />
+            </Principal>
+            <Dependent Role="smadevice">
+              <PropertyRef Name="devicetype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="adrmap_energymeter" EntityType="Self.adrmap_energymeter" />
+          <EntitySet Name="log_energymeter" EntityType="Self.log_energymeter" />
+          <EntitySet Name="smadevices" EntityType="Self.smadevice" />
+          <EntitySet Name="smadevicetypes" EntityType="Self.smadevicetype" />
+          <AssociationSet Name="FK_log_energymeter_smadevice" Association="Self.FK_log_energymeter_smadevice">
+            <End Role="smadevice" EntitySet="smadevices" />
+            <End Role="log_energymeter" EntitySet="log_energymeter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_smadevice_smadevicetype" Association="Self.FK_smadevice_smadevicetype">
+            <End Role="smadevicetype" EntitySet="smadevicetypes" />
+            <End Role="smadevice" EntitySet="smadevices" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="smardModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="adrmap_energymeter">
+            <EntityTypeMapping TypeName="smardModel.adrmap_energymeter">
+              <MappingFragment StoreEntitySet="adrmap_energymeter">
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="log_column" ColumnName="log_column" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="log_energymeter">
+            <EntityTypeMapping TypeName="smardModel.log_energymeter">
+              <MappingFragment StoreEntitySet="log_energymeter">
+                <ScalarProperty Name="device" ColumnName="device" />
+                <ScalarProperty Name="logtime" ColumnName="logtime" />
+                <ScalarProperty Name="p_in_l1_act" ColumnName="p_in_l1_act" />
+                <ScalarProperty Name="p_in_l2_act" ColumnName="p_in_l2_act" />
+                <ScalarProperty Name="p_in_l3_act" ColumnName="p_in_l3_act" />
+                <ScalarProperty Name="p_in_all_act" ColumnName="p_in_all_act" />
+                <ScalarProperty Name="q_in_l1_act1" ColumnName="q_in_l1_act1" />
+                <ScalarProperty Name="q_in_l2_act1" ColumnName="q_in_l2_act1" />
+                <ScalarProperty Name="q_in_l3_act1" ColumnName="q_in_l3_act1" />
+                <ScalarProperty Name="q_in_all_act1" ColumnName="q_in_all_act1" />
+                <ScalarProperty Name="s_in_l1_act1" ColumnName="s_in_l1_act1" />
+                <ScalarProperty Name="s_in_l2_act1" ColumnName="s_in_l2_act1" />
+                <ScalarProperty Name="s_in_l3_act1" ColumnName="s_in_l3_act1" />
+                <ScalarProperty Name="s_in_all_act1" ColumnName="s_in_all_act1" />
+                <ScalarProperty Name="p_out_l1_act1" ColumnName="p_out_l1_act1" />
+                <ScalarProperty Name="p_out_l2_act1" ColumnName="p_out_l2_act1" />
+                <ScalarProperty Name="p_out_l3_act1" ColumnName="p_out_l3_act1" />
+                <ScalarProperty Name="p_out_all_act1" ColumnName="p_out_all_act1" />
+                <ScalarProperty Name="q_out_l1_act1" ColumnName="q_out_l1_act1" />
+                <ScalarProperty Name="q_out_l2_act1" ColumnName="q_out_l2_act1" />
+                <ScalarProperty Name="q_out_l3_act1" ColumnName="q_out_l3_act1" />
+                <ScalarProperty Name="q_out_all_act1" ColumnName="q_out_all_act1" />
+                <ScalarProperty Name="s_out_l1_act1" ColumnName="s_out_l1_act1" />
+                <ScalarProperty Name="s_out_l2_act1" ColumnName="s_out_l2_act1" />
+                <ScalarProperty Name="s_out_l3_act1" ColumnName="s_out_l3_act1" />
+                <ScalarProperty Name="s_out_all_act1" ColumnName="s_out_all_act1" />
+                <ScalarProperty Name="cosphi_l1" ColumnName="cosphi_l1" />
+                <ScalarProperty Name="cosphi_l2" ColumnName="cosphi_l2" />
+                <ScalarProperty Name="cosphi_l3" ColumnName="cosphi_l3" />
+                <ScalarProperty Name="thd_l1" ColumnName="thd_l1" />
+                <ScalarProperty Name="thd_l2" ColumnName="thd_l2" />
+                <ScalarProperty Name="thd_l3" ColumnName="thd_l3" />
+                <ScalarProperty Name="v_l1" ColumnName="v_l1" />
+                <ScalarProperty Name="v_l2" ColumnName="v_l2" />
+                <ScalarProperty Name="v_l3" ColumnName="v_l3" />
+                <ScalarProperty Name="p_in_l1_sum" ColumnName="p_in_l1_sum" />
+                <ScalarProperty Name="p_in_l2_sum" ColumnName="p_in_l2_sum" />
+                <ScalarProperty Name="p_in_l3_sum" ColumnName="p_in_l3_sum" />
+                <ScalarProperty Name="p_in_all_sum" ColumnName="p_in_all_sum" />
+                <ScalarProperty Name="q_in_l1_sum" ColumnName="q_in_l1_sum" />
+                <ScalarProperty Name="q_in_l2_sum" ColumnName="q_in_l2_sum" />
+                <ScalarProperty Name="q_in_l3_sum" ColumnName="q_in_l3_sum" />
+                <ScalarProperty Name="q_in_all_sum" ColumnName="q_in_all_sum" />
+                <ScalarProperty Name="s_in_l1_sum" ColumnName="s_in_l1_sum" />
+                <ScalarProperty Name="s_in_l2_sum" ColumnName="s_in_l2_sum" />
+                <ScalarProperty Name="s_in_l3_sum" ColumnName="s_in_l3_sum" />
+                <ScalarProperty Name="s_in_all_sum" ColumnName="s_in_all_sum" />
+                <ScalarProperty Name="p_out_l1_sum" ColumnName="p_out_l1_sum" />
+                <ScalarProperty Name="p_out_l2_sum" ColumnName="p_out_l2_sum" />
+                <ScalarProperty Name="p_out_l3_sum" ColumnName="p_out_l3_sum" />
+                <ScalarProperty Name="p_out_all_sum" ColumnName="p_out_all_sum" />
+                <ScalarProperty Name="q_out_l1_sum" ColumnName="q_out_l1_sum" />
+                <ScalarProperty Name="q_out_l2_sum" ColumnName="q_out_l2_sum" />
+                <ScalarProperty Name="q_out_l3_sum" ColumnName="q_out_l3_sum" />
+                <ScalarProperty Name="q_out_all_sum" ColumnName="q_out_all_sum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="smadevices">
+            <EntityTypeMapping TypeName="smardModel.smadevice">
+              <MappingFragment StoreEntitySet="smadevice">
+                <ScalarProperty Name="deviceID" ColumnName="deviceID" />
+                <ScalarProperty Name="devicetype" ColumnName="devicetype" />
+                <ScalarProperty Name="serialnumber" ColumnName="serialnumber" />
+                <ScalarProperty Name="hostname" ColumnName="hostname" />
+                <ScalarProperty Name="ipaddress" ColumnName="ipaddress" />
+                <ScalarProperty Name="targetaddress" ColumnName="targetaddress" />
+                <ScalarProperty Name="firmware" ColumnName="firmware" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="smadevicetypes">
+            <EntityTypeMapping TypeName="smardModel.smadevicetype">
+              <MappingFragment StoreEntitySet="smadevicetype">
+                <ScalarProperty Name="devicetypeID" ColumnName="devicetypeID" />
+                <ScalarProperty Name="devicetypeName" ColumnName="devicetypeName" />
+                <ScalarProperty Name="devicetypeClass" ColumnName="devicetypeClass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7c74b3da-d76d-4ef7-be6b-ca5f148f48ac" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50166/smardWCFService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="smardWCFService.xsd" MetadataType="Schema" ID="3ba634ea-f8c8-4d49-9b14-87dd80759529" SourceId="1" SourceUrl="http://localhost:50166/smardWCFService.svc?xsd=xsd0" />
+    <MetadataFile FileName="smardWCFService.wsdl" MetadataType="Wsdl" ID="9fc9413a-7181-41b1-818c-bd7d1ff504b9" SourceId="1" SourceUrl="http://localhost:50166/smardWCFService.svc?wsdl" />
+    <MetadataFile FileName="smardWCFService.disco" MetadataType="Disco" ID="42a53f0a-a02b-478c-ae0f-1f5a6bf7d7d7" SourceId="1" SourceUrl="http://localhost:50166/smardWCFService.svc?disco" />
+    <MetadataFile FileName="smardWCFService1.xsd" MetadataType="Schema" ID="834a3b38-e3a9-4897-93fc-b5fd4d397782" SourceId="1" SourceUrl="http://localhost:50166/smardWCFService.svc?xsd=xsd1" />
+    <MetadataFile FileName="smardWCFService2.xsd" MetadataType="Schema" ID="7856c0b7-fee5-4971-ad41-9a6659d8447f" SourceId="1" SourceUrl="http://localhost:50166/smardWCFService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

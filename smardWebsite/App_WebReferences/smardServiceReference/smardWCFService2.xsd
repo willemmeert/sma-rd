@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/smardWeb" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/smardWeb" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfadrmap_energymeter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="adrmap_energymeter" nillable="true" type="tns:adrmap_energymeter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfadrmap_energymeter" nillable="true" type="tns:ArrayOfadrmap_energymeter" />
+  <xs:complexType name="adrmap_energymeter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" type="xs:int" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="log_column" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="type" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="adrmap_energymeter" nillable="true" type="tns:adrmap_energymeter" />
+  <xs:complexType name="ArrayOflog_energymeter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="log_energymeter" nillable="true" type="tns:log_energymeter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOflog_energymeter" nillable="true" type="tns:ArrayOflog_energymeter" />
+  <xs:complexType name="log_energymeter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cosphi_l1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="cosphi_l2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="cosphi_l3" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="device" type="xs:int" />
+      <xs:element minOccurs="0" name="logtime" type="xs:int" />
+      <xs:element minOccurs="0" name="p_in_all_act" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="p_in_all_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="p_in_l1_act" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="p_in_l1_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="p_in_l2_act" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="p_in_l2_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="p_in_l3_act" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="p_in_l3_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="p_out_all_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="p_out_all_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="p_out_l1_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="p_out_l1_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="p_out_l2_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="p_out_l2_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="p_out_l3_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="p_out_l3_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="q_in_all_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="q_in_all_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="q_in_l1_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="q_in_l1_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="q_in_l2_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="q_in_l2_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="q_in_l3_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="q_in_l3_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="q_out_all_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="q_out_all_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="q_out_l1_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="q_out_l1_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="q_out_l2_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="q_out_l2_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="q_out_l3_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="q_out_l3_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="s_in_all_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="s_in_all_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="s_in_l1_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="s_in_l1_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="s_in_l2_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="s_in_l2_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="s_in_l3_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="s_in_l3_sum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="s_out_all_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="s_out_l1_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="s_out_l2_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="s_out_l3_act1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="smadevice" nillable="true" type="tns:smadevice" />
+      <xs:element minOccurs="0" name="thd_l1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="thd_l2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="thd_l3" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="v_l1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="v_l2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="v_l3" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="log_energymeter" nillable="true" type="tns:log_energymeter" />
+  <xs:complexType name="smadevice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="deviceID" type="xs:int" />
+      <xs:element minOccurs="0" name="devicetype" type="xs:int" />
+      <xs:element minOccurs="0" name="firmware" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="hostname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ipaddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="log_energymeter" nillable="true" type="tns:ArrayOflog_energymeter" />
+      <xs:element minOccurs="0" name="serialnumber" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="smadevicetype" nillable="true" type="tns:smadevicetype" />
+      <xs:element minOccurs="0" name="targetaddress" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="smadevice" nillable="true" type="tns:smadevice" />
+  <xs:complexType name="smadevicetype">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="devicetypeClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="devicetypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="devicetypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="smadevices" nillable="true" type="tns:ArrayOfsmadevice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="smadevicetype" nillable="true" type="tns:smadevicetype" />
+  <xs:complexType name="ArrayOfsmadevice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="smadevice" nillable="true" type="tns:smadevice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfsmadevice" nillable="true" type="tns:ArrayOfsmadevice" />
+</xs:schema>

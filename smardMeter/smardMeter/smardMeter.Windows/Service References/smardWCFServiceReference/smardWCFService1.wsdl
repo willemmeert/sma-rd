@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="smardWCFService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://smard.azurewebsites.net/smardWCFService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://smard.azurewebsites.net/smardWCFService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://smard.azurewebsites.net/smardWCFService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/smardWeb" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IsmardWCFService_GetAddressMap_EnergyMeter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressMap_EnergyMeter" />
+  </wsdl:message>
+  <wsdl:message name="IsmardWCFService_GetAddressMap_EnergyMeter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressMap_EnergyMeterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsmardWCFService_GetLogRaw_EnergyMeter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogRaw_EnergyMeter" />
+  </wsdl:message>
+  <wsdl:message name="IsmardWCFService_GetLogRaw_EnergyMeter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogRaw_EnergyMeterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsmardWCFService_AddDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDevice" />
+  </wsdl:message>
+  <wsdl:message name="IsmardWCFService_AddDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsmardWCFService_GetDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDevice" />
+  </wsdl:message>
+  <wsdl:message name="IsmardWCFService_GetDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsmardWCFService_AddLogEntry_EnergyMeter_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLogEntry_EnergyMeter" />
+  </wsdl:message>
+  <wsdl:message name="IsmardWCFService_AddLogEntry_EnergyMeter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLogEntry_EnergyMeterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IsmardWCFService">
+    <wsdl:operation name="GetAddressMap_EnergyMeter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IsmardWCFService/GetAddressMap_EnergyMeter" message="tns:IsmardWCFService_GetAddressMap_EnergyMeter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IsmardWCFService/GetAddressMap_EnergyMeterResponse" message="tns:IsmardWCFService_GetAddressMap_EnergyMeter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogRaw_EnergyMeter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IsmardWCFService/GetLogRaw_EnergyMeter" message="tns:IsmardWCFService_GetLogRaw_EnergyMeter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IsmardWCFService/GetLogRaw_EnergyMeterResponse" message="tns:IsmardWCFService_GetLogRaw_EnergyMeter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDevice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IsmardWCFService/AddDevice" message="tns:IsmardWCFService_AddDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IsmardWCFService/AddDeviceResponse" message="tns:IsmardWCFService_AddDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDevice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IsmardWCFService/GetDevice" message="tns:IsmardWCFService_GetDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IsmardWCFService/GetDeviceResponse" message="tns:IsmardWCFService_GetDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLogEntry_EnergyMeter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IsmardWCFService/AddLogEntry_EnergyMeter" message="tns:IsmardWCFService_AddLogEntry_EnergyMeter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IsmardWCFService/AddLogEntry_EnergyMeterResponse" message="tns:IsmardWCFService_AddLogEntry_EnergyMeter_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IsmardWCFService" type="tns:IsmardWCFService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAddressMap_EnergyMeter">
+      <soap:operation soapAction="http://tempuri.org/IsmardWCFService/GetAddressMap_EnergyMeter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogRaw_EnergyMeter">
+      <soap:operation soapAction="http://tempuri.org/IsmardWCFService/GetLogRaw_EnergyMeter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDevice">
+      <soap:operation soapAction="http://tempuri.org/IsmardWCFService/AddDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDevice">
+      <soap:operation soapAction="http://tempuri.org/IsmardWCFService/GetDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLogEntry_EnergyMeter">
+      <soap:operation soapAction="http://tempuri.org/IsmardWCFService/AddLogEntry_EnergyMeter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="smardWCFService">
+    <wsdl:port name="BasicHttpBinding_IsmardWCFService" binding="tns:BasicHttpBinding_IsmardWCFService">
+      <soap:address location="http://smard.azurewebsites.net/smardWCFService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{76a9b4db-9939-426c-a6a5-2c12fe01f174}</UniqueIdentifier>
+      <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
+    </Filter>
+    <Image Include="Assets\Logo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallLogo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\WideLogo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SMAEnergyMeter.Windows_TemporaryKey.pfx" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="HubPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HubPage.xaml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HubPage.xaml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ItemPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ItemPage.xaml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ItemPage.xaml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="SectionPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SectionPage.xaml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SectionPage.xaml.h" />
+  </ItemGroup>
+</Project>

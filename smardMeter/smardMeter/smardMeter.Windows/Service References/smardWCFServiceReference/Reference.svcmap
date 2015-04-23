@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e2c956c0-152b-4578-8cd1-fc18b2d26b23" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://smard.azurewebsites.net/smardWCFService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="smardWCFService1.disco" MetadataType="Disco" ID="32219f8b-3ec4-4d98-8bfb-8afbc123ea34" SourceId="1" SourceUrl="https://smard.azurewebsites.net/smardWCFService.svc?disco" />
+    <MetadataFile FileName="smardWCFService3.xsd" MetadataType="Schema" ID="ec33bb35-c021-4887-8286-99bcd2f15323" SourceId="1" SourceUrl="https://smard.azurewebsites.net/smardWCFService.svc?xsd=xsd0" />
+    <MetadataFile FileName="smardWCFService31.xsd" MetadataType="Schema" ID="730d4e85-b60a-438e-a849-eb41d1593414" SourceId="1" SourceUrl="https://smard.azurewebsites.net/smardWCFService.svc?xsd=xsd1" />
+    <MetadataFile FileName="smardWCFService32.xsd" MetadataType="Schema" ID="19b1d57d-2db7-4921-b86e-4977d21a53ee" SourceId="1" SourceUrl="https://smard.azurewebsites.net/smardWCFService.svc?xsd=xsd2" />
+    <MetadataFile FileName="smardWCFService1.wsdl" MetadataType="Wsdl" ID="b642ed4c-af26-4d44-9b4f-600eb6e5fc00" SourceId="1" SourceUrl="https://smard.azurewebsites.net/smardWCFService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
